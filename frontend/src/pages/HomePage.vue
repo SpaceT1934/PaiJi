@@ -1,5 +1,5 @@
 <script setup>
-import { BookOpen, Camera, Images, MapPin, Sparkles, Waves } from "lucide-vue-next"
+import { BookOpen, Camera, ChevronRight, Images, MapPin } from "lucide-vue-next"
 
 defineProps({
   active: Boolean,
@@ -13,61 +13,93 @@ defineProps({
   }
 })
 
-const emit = defineEmits(["create-book", "open-book"])
+const emit = defineEmits(["create-book", "open-book", "quick-capture"])
+
+const assetUrl = (name) => `${import.meta.env.BASE_URL}assets/${name}`
 </script>
 
 <template>
-  <section class="screen home-screen" :class="{ active }" aria-label="书架首页">
-    <header class="brand-head">
-      <h1>拍迹</h1>
-      <p>把随手拍的照片，生成一本会说话的旅行书</p>
+  <section class="screen home-screen home-desk" :class="{ active }" aria-label="书架首页">
+    <div class="desk-decoration tape-one" />
+    <div class="desk-decoration tape-two" />
+
+    <header class="home-hero-head">
+      <div>
+        <h1>拍迹</h1>
+        <p>
+          <span>把随手拍的照片，</span>
+          <span>生成一本会说话的旅行书</span>
+        </p>
+      </div>
+      <button class="floating-book-button" type="button" aria-label="打开书架" @click="emit('open-book')">
+        <BookOpen :size="23" />
+      </button>
     </header>
 
-    <section class="book-universe" aria-label="旅行书书架">
-      <div class="paper-grain" />
-      <div class="brand-pill">
-        <BookOpen :size="15" />
-        <span>拍迹 · 旅行书生成器</span>
+    <section class="open-travel-book" aria-label="南京旅行书预览">
+      <div class="route-dash" />
+      <div class="map-pocket">
+        <MapPin :size="21" />
       </div>
-      <BookOpen class="bookmark-mark" :size="30" />
+      <button class="open-book-pages" type="button" @click="emit('open-book')">
+        <div class="book-ring" />
+        <article class="book-page left-page">
+          <span class="paperclip" />
+          <MapPin class="tiny-pin" :size="18" />
+          <h2>{{ bookTitle }}</h2>
+          <div class="travel-tags">
+            <span>夫子庙</span>
+            <span>秦淮河</span>
+            <span>夜游</span>
+          </div>
+          <p>这本旅行书已经写好开头，点击继续完善你的故事吧</p>
+          <div class="story-flow">
+            <Camera :size="18" />
+            <i />
+            <BookOpen :size="18" />
+          </div>
+        </article>
 
-      <button class="notebook notebook-nanjing" type="button" @click="emit('open-book')">
-        <MapPin class="book-icon" :size="17" />
-        <span class="photo-sticker nanjing-photo" />
-        <span class="book-label teal-label">
-          <strong>{{ bookTitle }}</strong>
-          <small>{{ cardCount }} 张卡片</small>
-        </span>
+        <article class="book-page right-page">
+          <div class="polaroid main-polaroid">
+            <img :src="assetUrl('fuzimiao-lantern-crowd.jpg')" alt="夫子庙夜景照片" />
+            <strong>夫子庙的夜景</strong>
+            <span class="heart-mark">♡</span>
+          </div>
+          <div class="polaroid small-polaroid">
+            <img :src="assetUrl('fuzimiao-night-snack.jpg')" alt="南京小吃照片" />
+          </div>
+          <span class="page-curl" />
+        </article>
       </button>
-
-      <article class="notebook notebook-xiamen" aria-label="厦门海风小记">
-        <Waves class="book-icon" :size="17" />
-        <span class="photo-sticker xiamen-photo" />
-        <span class="book-label brown-label">
-          <strong>厦门海风小记</strong>
-          <small>待开启</small>
-        </span>
-      </article>
-
-      <div class="shelf-caption">随机书架 · 每次旅行都能变成一本书</div>
     </section>
 
-    <button class="cta stamp" @click="emit('create-book')">
-      <Sparkles :size="18" />
-      新建一本旅行书
+    <button class="cta home-create-button" @click="emit('quick-capture')">
+      <Camera :size="20" />
+      点击开始随手拍照
     </button>
 
-    <section class="quick-actions">
-      <button type="button" @click="emit('open-book')">
-        <Camera :size="18" />
-        <strong>边拍边写</strong>
-        <span>拍一张就加一页</span>
-      </button>
-      <button type="button" @click="emit('create-book')">
-        <Images :size="18" />
-        <strong>相册成书</strong>
-        <span>批量整理旅行照片</span>
-      </button>
+    <section class="my-books-panel" aria-label="我的旅行书">
+      <header>
+        <strong><BookOpen :size="16" /> 我的书架</strong>
+        <button type="button" @click="emit('open-book')">查看全部 <ChevronRight :size="15" /></button>
+      </header>
+      <div class="mini-book-row">
+        <button class="mini-book-card" type="button" @click="emit('open-book')">
+          <span class="mini-book-rings" />
+          <span class="mini-cover-photo">
+            <img :src="assetUrl('fuzimiao-lantern-crowd.jpg')" alt="南京旅行书封面" />
+          </span>
+          <strong>{{ bookTitle }}</strong>
+        </button>
+        <article class="mini-book-card">
+          <span class="mini-book-rings" />
+          <span class="mini-cover-photo">
+            <img :src="assetUrl('fuzimiao-cat-guide.jpg')" alt="苏州旅行书封面" />
+          </span>
+          <strong>苏州春日慢游</strong>
+        </article>
+      </div>
     </section>
   </section>
 </template>

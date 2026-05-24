@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.mjs",
+  "scripts": {
+    "dev": "node --watch src/index.mjs",
+    "start": "node src/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "multer": "^2.1.1"
+  }
+}

@@ -1,0 +1,36 @@
+<svg width="900" height="1280" viewBox="0 0 900 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1280" rx="34" fill="#F6E8CC"/>
+  <path d="M92 164C220 88 362 110 462 172C548 226 640 224 776 166" stroke="#C8A66D" stroke-width="20" stroke-linecap="round" opacity=".22"/>
+  <path d="M118 1060C236 994 344 1020 452 1078C562 1138 676 1132 790 1048" stroke="#C8A66D" stroke-width="18" stroke-linecap="round" opacity=".2"/>
+  <path d="M58 662C178 590 312 590 438 650C570 714 692 688 842 606" stroke="#7CA8A0" stroke-width="46" stroke-linecap="round" opacity=".28"/>
+  <path d="M108 654C226 610 338 618 440 672C554 732 678 700 800 630" stroke="#477E78" stroke-width="8" stroke-linecap="round" stroke-dasharray="18 18" opacity=".38"/>
+  <path d="M180 336L318 260L476 318L634 246L762 322" stroke="#7B603A" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 16" opacity=".54"/>
+  <path d="M194 876L334 796L492 846L646 766L774 838" stroke="#7B603A" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 16" opacity=".48"/>
+  <path d="M198 396C250 356 314 352 366 388C420 426 476 420 532 382C584 346 654 354 706 398" stroke="#B94E3B" stroke-width="7" stroke-linecap="round" opacity=".44"/>
+  <path d="M172 958C238 920 304 928 358 966C430 1018 514 1012 588 958C654 910 726 922 782 968" stroke="#B94E3B" stroke-width="7" stroke-linecap="round" opacity=".36"/>
+  <g opacity=".46" stroke="#7B603A" stroke-width="3" stroke-linecap="round">
+    <path d="M122 222h92"/>
+    <path d="M112 242h54"/>
+    <path d="M656 210h122"/>
+    <path d="M700 232h72"/>
+    <path d="M112 1138h128"/>
+    <path d="M620 1148h156"/>
+    <path d="M660 1172h78"/>
+  </g>
+  <g opacity=".34" fill="#7B603A">
+    <circle cx="170" cy="120" r="5"/>
+    <circle cx="752" cy="480" r="6"/>
+    <circle cx="118" cy="768" r="4"/>
+    <circle cx="686" cy="984" r="5"/>
+    <circle cx="320" cy="1140" r="4"/>
+    <circle cx="814" cy="208" r="4"/>
+  </g>
+  <g opacity=".22">
+    <path d="M282 518h122v92H282z" fill="#FFF8EA"/>
+    <path d="M532 528h94v132h-94z" fill="#FFF8EA"/>
+    <path d="M224 738h116v96H224z" fill="#FFF8EA"/>
+    <path d="M612 728h138v88H612z" fill="#FFF8EA"/>
+  </g>
+  <text x="86" y="96" fill="#2F3329" font-family="serif" font-size="42" font-weight="700">南京周末漫游</text>
+  <text x="90" y="130" fill="#7B603A" font-family="sans-serif" font-size="20" font-weight="700">mock GPS travel map</text>
+</svg>
